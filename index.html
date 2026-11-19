@@ -1,0 +1,417 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#100e09">
+<title>دفتر حقوقی سیّد</title>
+
+<style>
+:root {
+--bg:#100e09;
+--gold:#d6ad55;
+--gold2:#f0d48d;
+--text:#fff8e9;
+--muted:#c5b99f;
+--line:#705522;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+margin:0;
+background:var(--bg);
+color:var(--text);
+font-family:Tahoma,Arial,sans-serif;
+line-height:2;
+}
+a{color:inherit;text-decoration:none}
+.wrap{width:92%;max-width:1120px;margin:auto}
+
+header{
+position:sticky;top:0;z-index:5;
+background:#17130bf2;
+border-bottom:1px solid var(--line);
+}
+nav{
+min-height:75px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
+}
+.brand{
+font-size:21px;
+font-weight:bold;
+color:var(--gold2);
+}
+.mark{
+display:inline-grid;
+place-items:center;
+width:43px;height:43px;
+border:2px solid var(--gold);
+border-radius:12px;
+margin-left:8px;
+}
+.links{display:flex;gap:20px;color:var(--muted)}
+.links a:hover{color:var(--gold2)}
+
+.btn{
+display:inline-block;
+background:linear-gradient(135deg,#f0d48d,#bd8b2e);
+color:#171107;
+padding:10px 22px;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+border:1px solid var(--gold2);
+font-family:inherit;
+}
+.ghost{
+background:transparent;
+color:var(--gold2);
+}
+
+.hero{
+padding:100px 0 75px;
+background:
+radial-gradient(ellipse at 15% 25%,#59431b55,transparent 45%),
+linear-gradient(120deg,#100e09,#21190b);
+}
+.eyebrow{color:var(--gold2);font-size:14px}
+h1{font-size:clamp(35px,5vw,60px);line-height:1.5}
+h1 span{color:var(--gold2)}
+.hero p{color:var(--muted);max-width:670px;font-size:17px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.goldline{height:3px;width:90px;background:var(--gold);margin:25px 0}
+
+section{padding:70px 0}
+.head{margin-bottom:30px}
+.head h2{color:var(--gold2);font-size:30px}
+.head p{color:var(--muted)}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+.card{
+background:linear-gradient(145deg,#282012,#19150d);
+border:1px solid var(--line);
+border-radius:17px;
+padding:24px;
+transition:.2s;
+}
+.card:hover{
+border-color:var(--gold);
+transform:translateY(-4px);
+}
+.symbol{font-size:28px;color:var(--gold2)}
+.card h3{color:var(--gold2)}
+.card p{color:var(--muted);font-size:14px}
+
+.about{
+background:#18140c;
+border-block:1px solid var(--line);
+}
+.aboutbox{
+border:1px solid var(--line);
+border-radius:20px;
+padding:30px;
+background:linear-gradient(130deg,#30230e,#17130b);
+}
+.aboutbox p{color:var(--muted)}
+.aboutbox strong{color:var(--gold2)}
+
+.contact-teaser{
+padding:28px;
+border:1px solid var(--gold);
+border-radius:18px;
+background:linear-gradient(110deg,#392a10,#1b160c);
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+}
+
+#contactPage{
+display:none;
+min-height:75vh;
+padding:55px 0;
+}
+.contact-panel{
+max-width:850px;
+margin:auto;
+background:linear-gradient(145deg,#30230e,#19140b);
+border:1px solid var(--gold);
+border-radius:20px;
+padding:30px;
+}
+.contact-panel h2{
+font-size:35px;
+color:var(--gold2);
+}
+.back{
+display:inline-block;
+color:var(--gold2);
+margin-bottom:20px;
+cursor:pointer;
+}
+.intro{color:var(--muted)}
+.item{
+padding:18px 0;
+border-bottom:1px solid #604a24;
+}
+.label{
+display:block;
+color:var(--gold2);
+font-size:14px;
+}
+.value{font-size:19px;overflow-wrap:anywhere}
+.phone{
+color:#ffe3a3;
+text-decoration:underline;
+}
+.address{font-size:18px}
+
+footer{
+border-top:1px solid var(--line);
+padding:24px 0;
+color:var(--muted);
+font-size:13px;
+}
+
+@media(max-width:800px){
+.links{display:none}
+.grid{grid-template-columns:1fr 1fr}
+.hero{padding:70px 0}
+}
+@media(max-width:540px){
+.grid{grid-template-columns:1fr}
+nav{min-height:65px}
+.brand{font-size:17px}
+.contact-teaser{display:block}
+.contact-teaser .btn{margin-top:15px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="wrap">
+<nav>
+<a class="brand" href="#" onclick="showHome();return false">
+<span class="mark">⚖</span>
+دفتر حقوقی سیّد
+</a>
+
+<div class="links">
+<a href="#home">صفحه اصلی</a>
+<a href="#services">خدمات حقوقی</a>
+<a href="#about">درباره دفتر</a>
+<a href="#" onclick="showContact();return false">اطلاعات تماس</a>
+</div>
+
+<a class="btn" href="#" onclick="showContact();return false">
+شماره تلفن و نشانی
+</a>
+</nav>
+</div>
+</header>
+
+<div id="homePage">
+<main>
+
+<section class="hero" id="home">
+<div class="wrap">
+<div class="eyebrow">مشاوره و خدمات حقوقی</div>
+
+<h1>
+همراه شما در مسیر<br>
+<span>قانون و پیگیری حقوق</span>
+</h1>
+
+<p>
+دفتر حقوقی سیّد؛ ارائه خدمات و راهنمایی در زمینه شکایت‌ها،
+امور حقوقی، تنظیم اظهارنامه و پیگیری مسائل قانونی
+با رویکردی دقیق و مسئولانه.
+</p>
+
+<div class="goldline"></div>
+
+<div class="actions">
+<a class="btn" href="#" onclick="showContact();return false">تماس با دفتر</a>
+<a class="btn ghost" href="#services">آشنایی با خدمات</a>
+</div>
+</div>
+</section>
+
+<section id="services">
+<div class="wrap">
+<div class="head">
+<div class="eyebrow">حوزه‌های فعالیت</div>
+<h2>خدمات حقوقی دفتر</h2>
+<p>برای بررسی هر موضوع، مدارک و شرایط پرونده باید جداگانه ارزیابی شود.</p>
+</div>
+
+<div class="grid">
+
+<article class="card">
+<div class="symbol">⚖</div>
+<h3>شکایت و دعاوی</h3>
+<p>راهنمایی درباره طرح شکایت، پیگیری دعاوی و آشنایی با مراحل قانونی.</p>
+</article>
+
+<article class="card">
+<div class="symbol">✉</div>
+<h3>تنظیم اظهارنامه</h3>
+<p>تهیه و تنظیم اظهارنامه و مکاتبات رسمی متناسب با موضوع و مدارک.</p>
+</article>
+
+<article class="card">
+<div class="symbol">§</div>
+<h3>امور حقوقی</h3>
+<p>بررسی اختلافات و مسائل حقوقی و توضیح مسیرهای قانونی قابل بررسی.</p>
+</article>
+
+<article class="card">
+<div class="symbol">▤</div>
+<h3>تنظیم و بررسی قرارداد</h3>
+<p>بررسی مفاد قراردادها و کمک به تنظیم توافق‌ها و اسناد حقوقی.</p>
+</article>
+
+<article class="card">
+<div class="symbol">⌂</div>
+<h3>امور ملکی</h3>
+<p>راهنمایی در اختلافات ملکی، معاملات، اجاره و موضوعات مرتبط.</p>
+</article>
+
+<article class="card">
+<div class="symbol">▣</div>
+<h3>مشاوره و پیگیری</h3>
+<p>بررسی اولیه موضوع، مدارک و ارائه توضیح درباره مراحل احتمالی پیگیری.</p>
+</article>
+
+</div>
+</div>
+</section>
+
+<section class="about" id="about">
+<div class="wrap">
+<div class="head">
+<div class="eyebrow">معرفی دفتر</div>
+<h2>دفتر حقوقی سیّد</h2>
+</div>
+
+<div class="aboutbox">
+<p><strong>مسئول دفتر: سید میرحسن سیدی</strong></p>
+<p>
+این وب‌سایت برای معرفی خدمات دفتر حقوقی سیّد و راه‌های
+ارتباطی آن طراحی شده است.
+</p>
+<p>
+اصل کار: پاسخ‌گویی روشن، حفظ محرمانگی اطلاعات
+و توضیح مراحل قابل پیگیری.
+</p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="contact-teaser">
+<div>
+<div class="eyebrow">راه‌های ارتباطی</div>
+<h2 style="color:#f0d48d">نشانی و شماره‌های دفتر را ببینید</h2>
+<p style="color:#c5b99f">
+برای مشاهده شماره همراه، تلفن دفتر و نشانی کامل
+وارد صفحه اطلاعات تماس شوید.
+</p>
+</div>
+
+<a class="btn" href="#" onclick="showContact();return false">
+مشاهده اطلاعات تماس
+</a>
+</div>
+</div>
+</section>
+
+</main>
+</div>
+
+<div id="contactPage">
+<div class="wrap">
+
+<a class="back" onclick="showHome()">← بازگشت به صفحه اصلی</a>
+
+<div class="contact-panel">
+<div class="eyebrow">راه‌های ارتباطی و نشانی</div>
+<h2>اطلاعات تماس دفتر</h2>
+<p class="intro">برای ارتباط با دفتر حقوقی سیّد از اطلاعات زیر استفاده کنید.</p>
+
+<div class="item">
+<span class="label">نام دفتر</span>
+<div class="value">دفتر حقوقی سیّد</div>
+</div>
+
+<div class="item">
+<span class="label">مسئول دفتر</span>
+<div class="value">سید میرحسن سیدی</div>
+</div>
+
+<div class="item">
+<span class="label">شماره همراه</span>
+<div class="value">
+<a class="phone" href="tel:09149070090">۰۹۱۴۹۰۷۰۰۹۰</a>
+</div>
+</div>
+
+<div class="item">
+<span class="label">شماره تلفن دفتر</span>
+<div class="value">
+<a class="phone" href="tel:04137727790">۰۴۱۳۷۷۲۷۷۹۰</a>
+</div>
+</div>
+
+<div class="item">
+<span class="label">نشانی دفتر</span>
+<div class="value address">
+خیابان امام خمینی، کوی سعدی، پاساژ سعدی، همکف
+</div>
+</div>
+
+<a class="btn" onclick="showHome()">بازگشت به صفحه اصلی</a>
+
+<p class="intro">
+با انتخاب شماره‌ها در تلفن همراه، امکان تماس مستقیم فراهم می‌شود.
+</p>
+</div>
+</div>
+</div>
+
+<footer>
+<div class="wrap">
+© دفتر حقوقی سیّد — سید میرحسن سیدی
+</div>
+</footer>
+
+<script>
+function showContact(){
+document.getElementById('homePage').style.display='none';
+document.getElementById('contactPage').style.display='block';
+window.scrollTo(0,0);
+document.title='اطلاعات تماس | دفتر حقوقی سیّد';
+}
+
+function showHome(){
+document.getElementById('contactPage').style.display='none';
+document.getElementById('homePage').style.display='block';
+window.scrollTo(0,0);
+document.title='دفتر حقوقی سیّد';
+}
+</script>
+
+</body>
+  </html>
+  
