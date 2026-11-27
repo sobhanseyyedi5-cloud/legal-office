@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دفتر چاپ و نگارش سیدی</title>
+
+<style>
+:root {
+    --navy: #101d36;
+    --navy2: #1c3154;
+    --gold: #d6ad55;
+    --cream: #f7f3e9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Tahoma, Arial, sans-serif;
+    background: var(--cream);
+    color: #202b3d;
+    line-height: 1.9;
+}
+
+header {
+    background: var(--navy);
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 4px solid var(--gold);
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--gold);
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+}
+
+nav button {
+    font: inherit;
+    color: white;
+    background: transparent;
+    padding: 8px 17px;
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+nav button:hover,
+nav button.active {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+.hero {
+    padding: 85px 8%;
+    background: linear-gradient(120deg, var(--navy), var(--navy2));
+    color: white;
+    min-height: 390px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-inner {
+    max-width: 760px;
+}
+
+.hero h1 {
+    font-size: clamp(30px, 5vw, 48px);
+    color: var(--gold);
+    line-height: 1.5;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #f0eadb;
+    margin-bottom: 28px;
+}
+
+.gold-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+}
+
+.section {
+    padding: 48px 8%;
+}
+
+.section h2 {
+    color: var(--navy);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e6d6b4;
+    border-top: 4px solid var(--gold);
+    border-radius: 12px;
+    padding: 23px;
+}
+
+.card h3 {
+    color: var(--navy);
+}
+
+.icon {
+    font-size: 30px;
+}
+
+.info-wrap {
+    max-width: 850px;
+    margin: 55px auto;
+    padding: 0 20px;
+}
+
+.panel {
+    background: white;
+    padding: 32px;
+    border-radius: 14px;
+    border: 1px solid #e6d6b4;
+    border-top: 5px solid var(--gold);
+}
+
+.panel h1 {
+    color: var(--navy);
+}
+
+.intro {
+    color: #687386;
+}
+
+.detail {
+    padding: 15px 5px;
+    border-bottom: 1px solid #eee6d7;
+}
+
+.detail strong {
+    color: var(--navy);
+}
+
+.phone {
+    color: #87621d;
+    text-decoration: none;
+    direction: ltr;
+    display: inline-block;
+}
+
+footer {
+    background: var(--navy);
+    color: #e9dfc8;
+    text-align: center;
+    padding: 19px;
+    border-top: 3px solid var(--gold);
+    margin-top: 45px;
+}
+
+[hidden] {
+    display: none !important;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="brand">
+        دفتر چاپ و نگارش سیدی
+    </div>
+
+    <nav>
+        <button id="homeNav"
+        class="active"
+        onclick="showPage('home')">
+            صفحه اصلی
+        </button>
+
+        <button id="infoNav"
+        onclick="showPage('info')">
+            اطلاعات
+        </button>
+    </nav>
+
+</header>
+
+<main>
+
+    <!-- صفحه اصلی -->
+
+    <section id="homePage">
+
+        <div class="hero">
+            <div class="hero-inner">
+
+                <h1>
+                    دفتر چاپ و نگارش سیدی
+                </h1>
+
+                <p>
+                    ارائه خدمات چاپ، تایپ، نگارش
+                    و آماده‌سازی اسناد با دقت و کیفیت.
+                </p>
+
+                <button class="gold-btn"
+                onclick="showPage('info')">
+                    مشاهده اطلاعات دفتر
+                </button>
+
+            </div>
+        </div>
+
+        <section class="section">
+
+            <h2>خدمات دفتر</h2>
+
+            <div class="cards">
+
+                <article class="card">
+                    <div class="icon">🖨️</div>
+                    <h3>خدمات چاپ</h3>
+                    <p>
+                        چاپ انواع نوشته‌ها،
+                        اسناد و مدارک.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="icon">⌨️</div>
+                    <h3>تایپ و نگارش</h3>
+                    <p>
+                        تایپ و آماده‌سازی متن‌ها
+                        و نوشته‌های شما.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="icon">📑</div>
+                    <h3>تنظیم اسناد</h3>
+                    <p>
+                        مرتب‌سازی و صفحه‌آرایی
+                        اسناد و مدارک.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+    </section>
+
+    <!-- صفحه اطلاعات -->
+
+    <section id="infoPage"
+    class="info-wrap"
+    hidden>
+
+        <div class="panel">
+
+            <h1>اطلاعات دفتر</h1>
+
+            <p class="intro">
+                راه‌های ارتباطی و مشخصات
+                دفتر چاپ و نگارش سیدی
+            </p>
+
+            <div class="detail">
+                <strong>نام مدیر:</strong>
+                سید فرید سیدی
+            </div>
+
+            <div class="detail">
+                <strong>آدرس:</strong>
+                بناب / خیابان امام / کوی سعدی /
+                پاساژ سعدی / داخل سمت چپ
+            </div>
+
+            <div class="detail">
+                <strong>شماره تماس:</strong>
+
+                <a class="phone"
+                href="tel:09147640674">
+                    09147640674
+                </a>
+            </div>
+
+            <button class="gold-btn"
+            onclick="showPage('home')">
+                بازگشت به صفحه اصلی
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    © دفتر چاپ و نگارش سیدی
+</footer>
+
+<script>
+
+function showPage(page) {
+
+    const isInfo = page === 'info';
+
+    document.getElementById('homePage').hidden = isInfo;
+
+    document.getElementById('infoPage').hidden = !isInfo;
+
+    document.getElementById('homeNav')
+    .classList.toggle('active', !isInfo);
+
+    document.getElementById('infoNav')
+    .classList.toggle('active', isInfo);
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+
+    history.replaceState(
+        null,
+        '',
+        isInfo ? '#info' : '#home'
+    );
+}
+
+if (location.hash === '#info') {
+    showPage('info');
+}
+
+</script>
+
+</body>
+</html>
